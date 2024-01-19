@@ -1,0 +1,19 @@
+repositories:
+- name: "bitnami"
+  url: "https://charts.bitnami.com/bitnami"
+
+############################
+##         ArgoCD         ##
+############################
+releases:
+- name: "argocd"
+  namespace: "argocd"
+  chart: "bitnami/argo-cd"
+  version: 5.4.4
+
+helmDefaults:
+  createNamespace: true
+
+# kubectl port-forward --namespace argocd svc/argocd-argo-cd-server 8080:80 &
+# export URL=http://127.0.0.1:8080/
+# echo "Argo CD URL: http://127.0.0.1:8080/"
